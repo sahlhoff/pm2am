@@ -1,0 +1,43 @@
+<%- include nav %>
+<div class="row-fluid">
+	<h1 class="centr">Create a new spot</h1>
+	<div class="span8 offset2 myContainer">
+		<form action="/create" method="post">
+			<div class="row">
+				<div class="span4 offset1">
+					<div>
+						<label>Address</label>
+						<input id="search_address" name="hostAddress">
+					</div>
+					<div>
+						<label>Privacy:</label>
+						<label class="checkbox"><input type="checkbox" name="open">Public</label>
+						<label class="checkbox"><input type="checkbox" name="private">Private</label>
+					</div>
+				</div>
+				<div class="span4 offset2">
+					<div>
+						<label>Max days to stay</label>
+						<input name="hostDays">
+					</div>
+					<div>
+						<label>Amenities:</label>
+						<label class="checkbox"><input type="checkbox" name="hostWifi">wifi</label>
+						<label class="checkbox"><input type="checkbox" name="hostBathroom">bathroom</label>
+						<label class="checkbox"><input type="checkbox" name="hostShower">shower</label>
+						<label class="checkbox"><input type="checkbox" name="hostTent">tent</label>
+						<label class="checkbox"><input type="checkbox" name="hostWaste">waste</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<button class="btn">Create</button>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="javascripts/jquery.address.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script type="text/javascript" src="javascripts/jquery.geocomplete.min.js"></script>
+<script type="text/javascript">
+$("#search_address").geocomplete();
+</script>

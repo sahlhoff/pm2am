@@ -1,0 +1,28 @@
+<div class="navbar">
+      <div class="navbar-myInner">
+        <a class="brand" href="/">pm2am</a>
+        <ul class="nav">
+          <li><a href="/map">Map</a></li>
+        </ul>
+        <% if (typeof user != 'undefined') { %>
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+              <%= user.displayName %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li><a href="/account">My Account</a></li>
+              <li class="divider"></li>
+              <li><a href="/create">Create a spot</a></li>
+              <li><a href="/messages">Messages</a></li>
+              <li class="divider"></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        <% } else { %>
+              <div class="account">
+                <a href="/login">LOGIN</a> 
+              </div>
+            <% } %>
+      </div>
+    </div>

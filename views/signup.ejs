@@ -1,0 +1,50 @@
+<%- include nav %>
+<div class="row">
+	<h1 class="centr">Hey Chad, finish this form then your set.</h1>
+	<div class="span10 offset2 myContainer">
+		<form action="/signup" method="post">
+			<div class="row">
+				<div class="span4 offset1">
+					<div>
+						<label>Vehicle type</label>
+						<select name="vehicle">
+							<option name="car">car</option>
+							<option name="truck">truck</option>
+							<option name="rv">RV</option>
+							<option name="moto">Moto</option>
+						</select>
+					</div>
+					<div>
+						<label>Traveler type</label>
+						<select name="type">
+							<option name="casual">Casual</option>
+							<option name="avid">Avid</option>
+							<option name="vagabond">Vagabond</option>
+						</select>
+					</div>
+					<div>
+						<label class="checkbox"><input type="checkbox" name="host">Become a host</label>
+						
+					</div>
+				</div>
+				<div class="span4">
+					<div>
+						<label>City</label>
+						<input name="city">
+					</div>
+					<div>
+						<label>State</label>
+						<input name="state">
+					</div>
+					<div>
+						<label>Zip</label>
+						<input name="zip">
+					</div>
+				</div>
+			</div>
+			<hr>
+			<button class="btn">Submit</button>
+		</form>
+	</div>
+</div>
+

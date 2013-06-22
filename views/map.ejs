@@ -1,0 +1,97 @@
+<%- include nav %>
+<div class='container-fluid'>
+      <div class='row-fluid'>
+        <div class='span8'>
+          <noscript>
+            <div class='alert alert-info'>
+              <h4>Your JavaScript is disabled</h4>
+              <p>Please enable JavaScript to view the map.</p>
+            </div>
+          </noscript>
+          <div id='map_canvas'></div>
+        </div>
+        <div class='span4'>
+          <div class='well'>
+            <h4>
+              Address <small>(<a id='find_me' href='#'>find me</a>)</small>
+            </h4>
+            <input class='input-block-level' id='search_address' placeholder='Enter an address or an intersection' type='text' />
+            <label>
+              within
+              <select class='input-small' id='search_radius'>
+                <option value='8050'>5 miles</option>
+                <option value='16103'>10 miles</option>
+                <option value='32187'>20 miles</option>
+                <option value='80467'>50 miles</option>
+              </select>
+            </label>
+            <input class='btn btn-primary' id='search' type='button' value='Search' />
+            <button class='btn' id='reset'>Reset</button>
+          </div>
+          <div class='well'>
+            <!-- Once you decide what filter you want, place the HTML code here. The section in the maps_lib.js is also marked. Once you're done, feel free to delete this explanatory section.-->
+
+            <h4>Search</h4>
+            <p>Search the descriptions of parking spots.  Try searching for wifi.</p>
+            <div class='row-fluid'>
+              <input class='input-block-level' id='text_search' placeholder="Search" type='text' />
+            </div>
+          </div>
+          <p class='alert alert-info lead' id='result_count'></p>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript" src="javascripts/jquery.address.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script type="text/javascript" src="javascripts/jquery.geocomplete.min.js"></script>
+<script type="text/javascript" src="javascripts/maps_lib.js"></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(window).resize(function () {
+      var h = $(window).height(),
+        offsetTop = 90; // Calculate the top offset
+    
+      $('#map_canvas').css('height', (h - offsetTop));
+    }).resize();
+    
+    $(function() {
+      MapsLib.initialize();
+      $("#search_address").geocomplete();
+
+      $(':checkbox').click(function(){
+        MapsLib.doSearch();
+      });
+
+      $(':radio').click(function(){
+        MapsLib.doSearch();
+      });
+      
+      $('#search_radius').change(function(){
+        MapsLib.doSearch();
+      });
+      
+      $('#search').click(function(){
+        MapsLib.doSearch();
+      });
+      
+      $('#find_me').click(function(){
+        MapsLib.findMe(); 
+        return false;
+      });
+      
+      $('#reset').click(function(){
+        $.address.parameter('address','');
+        MapsLib.initialize(); 
+        return false;
+      });
+      
+      $(":text").keydown(function(e){
+          var key =  e.keyCode ? e.keyCode : e.which;
+          if(key == 13) {
+              $('#search').click();
+              return false;
+          }
+      });
+    });
+  //]]>
+</script>

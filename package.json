@@ -8,6 +8,12 @@
   "dependencies": {
     "express": "3.0.4",
     "ejs": "*",
-    "express-ejs-layouts": "0.3.x"
+    "express-ejs-layouts": "0.3.x",
+    "passport": "0.1.x",
+    "passport-facebook": "0.1.x",
+    "mongoose": "3.6.x",
+    "geocoder": "0.1.x",
+    "node-google-sql": "0.1.x",
+    "csv": "0.3.x"
   }
 }
