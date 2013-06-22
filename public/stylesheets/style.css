@@ -1,8 +1,51 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0;
 }
 
-a {
-  color: #00B7FF;
+.logo{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.myblue {
+	background-color: #1e82cc;
+}
+
+.myorange {
+	background-color: #a35200;
+}
+
+.mywhite {
+	color: #FFFFFF;
+}
+
+.fullheight {
+	height: 100em;
+}
+
+.leftcontainer {
+	width: 50em;
+	float: left;
+}
+
+.rightcontainer {
+	width: 50em;
+	float: left;
+}
+
+.BK {
+	background-color: #1e82cc;
+	width: 100%;
+	height: 900px;
+	color: #fff;
+}
+
+.logo {
+	font-size: 140px;
+}
+
+.helperText {
+	font-size: 40px;
+	text-align: center;
+	
 }
